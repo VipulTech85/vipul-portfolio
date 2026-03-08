@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipul Arya | Senior Quality Specialist</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #002D62, #001735);
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #ffd900;
+        }
+
+        /* Debug panel style */
+        .debug-panel {
+            background: #f0f0f0;
+            border: 2px solid red;
+            padding: 10px;
+            margin: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            display: none; /* Hidden by default, press D to show */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 transition-colors duration-500">
+
+    <!-- DEBUG PANEL (Press 'D' to show/hide) -->
+    <div id="debugPanel" class="debug-panel fixed bottom-0 left-0 z-50 bg-white shadow-lg max-w-lg">
+        <h3 class="font-bold text-lg">🔍 DEBUG INFO</h3>
+        <div id="debugContent">Loading...</div>
+        <button onclick="this.parentElement.style.display='none'" class="bg-red-500 text-white px-2 py-1 text-sm mt-2">Close</button>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="fixed w-full bg-white shadow z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="font-bold text-xl">Vipul Arya</h1>
+            <nav id="menu" class="hidden md:flex gap-8 font-semibold">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#timeline">Journey</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="flex gap-4">
+                <button onclick="toggleDark()">🌙</button>
+                <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient min-h-screen flex items-center text-white pt-24">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+            
+            <!-- LEFT CONTENT -->
+            <div class="fade">
+                <h3 class="text-yellow-400 uppercase tracking-widest mb-4">
+                    Healthcare Quality Expert
+                </h3>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+                    Vipul Arya
+                </h1>
+                <p class="text-xl mb-6">
+                    Senior Quality Specialist | CPC | CAIMC | LSSGB
+                </p>
+                <p class="text-gray-200 mb-8">
+                    10+ years experience in Medical Coding, Revenue Cycle Management and Healthcare Quality.
+                </p>
+                
+                <!-- BUTTONS -->
+                <div class="flex gap-4">
+                    <!-- RESUME DOWNLOAD BUTTON - FIXED PATH -->
+                    <a href="documents/resume.pdf" 
+                       download="Vipul_Arya_Resume.pdf"
+                       class="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold hover:scale-105 transition"
+                       id="resumeLink"
+                       onclick="console.log('Downloading resume from:', this.href)">
+                        Download Resume
+                    </a>
+
+                    <a href="#contact"
+                       class="border border-yellow-400 px-8 py-3 rounded-lg hover:bg-yellow-400 hover:text-black transition">
+                        Contact
+                    </a>
+                </div>
+                
+                <!-- DEBUG INFO FOR RESUME -->
+                <p class="text-xs text-gray-300 mt-2" id="resumeDebug"></p>
+            </div>
+
+            <!-- RIGHT CONTENT - PROFILE IMAGE - FIXED PATH -->
+            <div class="flex justify-center fade">
+                <div class="relative">
+                    <img src="images/vipul-photo.png"
+                         alt="Vipul Arya"
+                         class="w-[300px] h-[300px] rounded-full shadow-2xl border-4 border-yellow-400 object-cover"
+                         id="profileImage"
+                         onerror="handleImageError(this)"
+                         onload="console.log('✅ Image loaded successfully:', this.src)">
+                    
+                    <!-- IMAGE STATUS INDICATOR -->
+                    <div id="imageStatus" class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs bg-black bg-opacity-70 text-white px-2 py-1 rounded whitespace-nowrap">
+                        Checking image...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 max-w-6xl mx-auto px-6 fade">
+        <h2 class="text-4xl font-bold mb-6">About Me</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+            Senior Quality Specialist with over a decade of experience
+            in ICD-10, CPT medical coding and revenue cycle management.
+            Focused on documentation accuracy, compliance, and
+            process optimization using Lean Six Sigma methodologies.
+        </p>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="bg-gray-100 py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Core Skills</h2>
+            <div class="space-y-8">
+                <div class="fade">
+                    <p class="font-semibold">Medical Coding</p>
+                    <div class="w-full bg-gray-300 h-4 rounded">
+                        <div class="bg-yellow-400 h-4 rounded w-[95%]"></div>
+                    </div>
+                </div>
+                <div class="fade">
+                    <p class="font-semibold">Revenue Cycle Management</p>
+                    <div class="w-full bg-gray-300 h-4 rounded">
+                        <div class="bg-yellow-400 h-4 rounded w-[90%]"></div>
+                    </div>
+                </div>
+                <div class="fade">
+                    <p class="font-semibold">Quality Assurance</p>
+                    <div class="w-full bg-gray-300 h-4 rounded">
+                        <div class="bg-yellow-400 h-4 rounded w-[97%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline" class="py-24 max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Professional Journey</h2>
+        <div class="relative timeline pl-16 space-y-12">
+            <div class="fade">
+                <h3 class="font-bold text-xl">Senior Quality Specialist</h3>
+                <p class="text-gray-500">Healthcare Quality & Coding Audit</p>
+            </div>
+            <div class="fade">
+                <h3 class="font-bold text-xl">Medical Coding Specialist</h3>
+                <p class="text-gray-500">ICD-10 / CPT Coding</p>
+            </div>
+            <div class="fade">
+                <h3 class="font-bold text-xl">Certified Professional Coder</h3>
+                <p class="text-gray-500">AAPC Certification</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="bg-gray-900 text-white py-24">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
+            <p class="text-gray-300 mb-6">
+                Interested in healthcare consulting, medical coding expertise, or QA improvement?
+            </p>
+            <p class="mb-3">📧 vipul.arya.in@gmail.com</p>
+            <a href="https://www.linkedin.com/in/vipul-arya-31525423b/"
+               class="text-yellow-400 font-bold">
+                LinkedIn Profile
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-center py-6">
+        © 2026 Vipul Arya
+    </footer>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script>
+        // ========== HELPER FUNCTIONS ==========
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("hidden");
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("bg-gray-900");
+            document.body.classList.toggle("text-white");
+        }
+
+        // ========== IMAGE ERROR HANDLING ==========
+        function handleImageError(img) {
+            console.error('❌ IMAGE FAILED TO LOAD:', img.src);
+            document.getElementById('imageStatus').innerHTML = '❌ Image not found! Check file name';
+            document.getElementById('imageStatus').style.backgroundColor = '#dc2626';
+            
+            // Try alternative paths
+            tryAlternativePaths(img);
+        }
+
+        function tryAlternativePaths(img) {
+            const paths = [
+                './images/vipul-photo.png',
+                '/images/vipul-photo.png',
+                'images/vipul-photo.PNG',
+                'images/vipul-photo.png.png',
+                '../images/vipul-photo.png'
+            ];
+            
+            console.log('Trying alternative paths...');
+            // This is just for debugging, doesn't actually try paths
+        }
+
+        // ========== INTERSECTION OBSERVER FOR FADE EFFECT ==========
+        const faders = document.querySelectorAll(".fade");
+        const appearOptions = { threshold: 0.2 };
+        
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // ========== DEBUG SYSTEM ==========
+        window.onload = function() {
+            console.log('🚀 Page loaded, checking files...');
+            
+            // Get current location info
+            const currentUrl = window.location.href;
+            const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+            
+            // Build debug info
+            let debugHtml = '';
+            debugHtml += `<p><strong>Page URL:</strong> ${currentUrl}</p>`;
+            debugHtml += `<p><strong>Base path:</strong> ${baseUrl}</p>`;
+            debugHtml += `<hr>`;
+            
+            // Check image
+            const imgPath = 'images/vipul-photo.png';
+            const fullImgUrl = baseUrl + imgPath;
+            debugHtml += `<p><strong>🖼️ Image path:</strong> ${imgPath}</p>`;
+            debugHtml += `<p><strong>Full image URL:</strong> ${fullImgUrl}</p>`;
+            
+            // Check PDF
+            const pdfPath = 'documents/resume.pdf';
+            const fullPdfUrl = baseUrl + pdfPath;
+            debugHtml += `<p><strong>📄 PDF path:</strong> ${pdfPath}</p>`;
+            debugHtml += `<p><strong>Full PDF URL:</strong> ${fullPdfUrl}</p>`;
+            debugHtml += `<hr>`;
+            
+            // Update debug panel
+            document.getElementById('debugContent').innerHTML = debugHtml;
+            
+            // Update status messages
+            document.getElementById('resumeDebug').innerHTML = `📄 Resume: ${fullPdfUrl}`;
+            
+            // Check if files exist using fetch
+            checkFileExists('images/vipul-photo.png', 'Image');
+            checkFileExists('documents/resume.pdf', 'Resume');
+            
+            // Check file extensions in Windows
+            console.log('🔍 Check your actual file names in Windows Explorer:');
+            console.log('1. Open File Explorer');
+            console.log('2. Go to View tab → Check "File name extensions"');
+            console.log('3. Verify these exact names:');
+            console.log('   - images folder: vipul-photo.png');
+            console.log('   - documents folder: resume.pdf');
+        };
+
+        // Function to check if file exists
+        function checkFileExists(path, type) {
+            fetch(path, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        console.log(`✅ ${type} found at:`, path);
+                        if (type === 'Image') {
+                            document.getElementById('imageStatus').innerHTML = '✅ Image found!';
+                            document.getElementById('imageStatus').style.backgroundColor = '#059669';
+                        }
+                    } else {
+                        console.error(`❌ ${type} NOT found at:`, path, 'Status:', response.status);
+                        if (type === 'Image') {
+                            document.getElementById('imageStatus').innerHTML = `❌ Image not found (${response.status})`;
+                            document.getElementById('imageStatus').style.backgroundColor = '#dc2626';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error(`❌ ${type} error:`, error.message);
+                    if (type === 'Image') {
+                        document.getElementById('imageStatus').innerHTML = '❌ Error checking image';
+                        document.getElementById('imageStatus').style.backgroundColor = '#dc2626';
+                    }
+                });
+        }
+
+        // Toggle debug panel with 'D' key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'd' || e.key === 'D') {
+                const panel = document.getElementById('debugPanel');
+                if (panel.style.display === 'none' || panel.style.display === '') {
+                    panel.style.display = 'block';
+                } else {
+                    panel.style.display = 'none';
+                }
+            }
+        });
+
+        // Also show debug info in console
+        console.log('🐛 DEBUG INFO - Press D to show/hide debug panel');
+        console.log('Current working directory:', window.location.pathname);
+    </script>
+
+    <!-- ADDITIONAL DEBUG INFO AT THE BOTTOM OF PAGE -->
+    <div class="fixed top-20 right-4 bg-black text-white text-xs p-2 rounded opacity-70 hover:opacity-100 z-40">
+        <div>🖼️ <span id="imageStatusSmall">Checking...</span></div>
+        <div>📄 <span id="pdfStatusSmall">Checking...</span></div>
+        <div class="text-yellow-400">Press 'D' for debug panel</div>
+    </div>
+
+    <script>
+        // Update small status panel
+        fetch('images/vipul-photo.png', { method: 'HEAD' })
+            .then(res => document.getElementById('imageStatusSmall').innerHTML = res.ok ? '✅' : '❌')
+            .catch(() => document.getElementById('imageStatusSmall').innerHTML = '❌');
+            
+        fetch('documents/resume.pdf', { method: 'HEAD' })
+            .then(res => document.getElementById('pdfStatusSmall').innerHTML = res.ok ? '✅' : '❌')
+            .catch(() => document.getElementById('pdfStatusSmall').innerHTML = '❌');
+    </script>
+</body>
+</html>
