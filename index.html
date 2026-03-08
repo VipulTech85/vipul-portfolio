@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vipul Arya | Senior Quality Specialist</title>
+    <title>Vipul Arya | Senior Quality Specialist - Medical Coding</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -129,6 +129,15 @@
             background: #fbbf24;
             border-radius: 50%;
         }
+        
+        /* Achievement cards */
+        .achievement-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -140,6 +149,7 @@
                 <!-- Logo -->
                 <div>
                     <h1 class="text-2xl font-bold text-blue-900">Vipul Arya</h1>
+                    <p class="text-xs text-gray-500">CPC, Senior Quality Specialist</p>
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -147,13 +157,14 @@
                     <a href="#about" class="font-semibold text-gray-700 hover:text-yellow-500 transition">About</a>
                     <a href="#skills" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Skills</a>
                     <a href="#experience" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Experience</a>
+                    <a href="#achievements" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Achievements</a>
                     <a href="#contact" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Contact</a>
                 </nav>
                 
                 <!-- Right Buttons -->
                 <div class="flex items-center space-x-4">
                     <a href="resume.pdf" download class="hidden md:inline-block bg-yellow-400 text-black px-5 py-2 rounded-lg font-bold hover:bg-yellow-300 transition">
-                        Resume
+                        📄 Resume
                     </a>
                     <button id="menuBtn" class="md:hidden text-3xl text-gray-700 hover:text-yellow-500">
                         ☰
@@ -168,8 +179,9 @@
                 <a href="#about" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">About</a>
                 <a href="#skills" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Skills</a>
                 <a href="#experience" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Experience</a>
+                <a href="#achievements" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Achievements</a>
                 <a href="#contact" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Contact</a>
-                <a href="resume.pdf" download class="bg-yellow-400 text-black px-5 py-3 rounded-lg font-bold text-center">Download Resume</a>
+                <a href="resume.pdf" download class="bg-yellow-400 text-black px-5 py-3 rounded-lg font-bold text-center">📄 Download Resume</a>
             </div>
         </div>
     </header>
@@ -183,7 +195,7 @@
                 <div>
                     <div class="fade-in">
                         <span class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
-                            Healthcare Quality Expert
+                            Senior Quality Specialist - Medical Coding
                         </span>
                     </div>
                     
@@ -192,12 +204,19 @@
                     </h1>
                     
                     <p class="fade-in delay-2 text-xl text-gray-200 mb-4">
-                        Senior Quality Specialist | CPC | CAIMC | LSSGB
+                        CPC | Senior Quality Specialist at R1 RCM | 12+ Years Experience
                     </p>
                     
                     <p class="fade-in delay-2 text-gray-300 text-lg mb-8 leading-relaxed">
-                        10+ years experience in Medical Coding, Revenue Cycle Management and Healthcare Quality.
+                        Certified Professional Coder with expertise in Emergency Department facility audits, general surgery compliance, and outpatient/urgent care coding. Consistently delivering 98%+ coding accuracy.
                     </p>
+                    
+                    <!-- Contact Info Row -->
+                    <div class="fade-in delay-2 flex flex-wrap gap-4 mb-6 text-sm text-gray-300">
+                        <span>📧 vipul.arya.in@gmail.com</span>
+                        <span>📞 +91 9717244415</span>
+                        <span>📍 Mumbai, India</span>
+                    </div>
                     
                     <!-- Buttons -->
                     <div class="fade-in delay-3 flex flex-wrap gap-4">
@@ -214,18 +233,22 @@
                     </div>
                     
                     <!-- Stats -->
-                    <div class="fade-in delay-3 grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
+                    <div class="fade-in delay-3 grid grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/20">
                         <div>
-                            <div class="text-3xl font-bold text-yellow-400">10+</div>
+                            <div class="text-3xl font-bold text-yellow-400">12+</div>
                             <div class="text-sm text-gray-300">Years</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-yellow-400">5000+</div>
-                            <div class="text-sm text-gray-300">Cases</div>
+                            <div class="text-3xl font-bold text-yellow-400">800+</div>
+                            <div class="text-sm text-gray-300">Audits/Month</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-yellow-400">100%</div>
+                            <div class="text-3xl font-bold text-yellow-400">98%</div>
                             <div class="text-sm text-gray-300">Accuracy</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-400">15+</div>
+                            <div class="text-sm text-gray-300">Team Led</div>
                         </div>
                     </div>
                 </div>
@@ -247,10 +270,15 @@
                             </div>
                         </div>
                         
-                        <!-- Experience Badge -->
-                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 w-20 h-20 rounded-full flex flex-col items-center justify-center text-black font-bold shadow-xl">
-                            <span class="text-2xl">10+</span>
-                            <span class="text-xs">Years</span>
+                        <!-- CPC Badge -->
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 w-24 h-24 rounded-full flex flex-col items-center justify-center text-black font-bold shadow-xl">
+                            <span class="text-lg">CPC</span>
+                            <span class="text-xs">Certified</span>
+                        </div>
+                        
+                        <!-- R1 RCM Badge -->
+                        <div class="absolute -top-4 -left-4 bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl">
+                            <span class="text-blue-600 font-bold text-sm">R1</span>
                         </div>
                     </div>
                 </div>
@@ -260,67 +288,59 @@
 
     <!-- ======== ABOUT SECTION ======== -->
     <section id="about" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="text-yellow-500">Me</span></h2>
-            <div class="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">About <span class="text-yellow-500">Me</span></h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto mb-12"></div>
             
-            <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                Senior Quality Specialist with over a decade of experience in healthcare quality assurance, 
-                medical coding, and revenue cycle management. I specialize in ensuring documentation accuracy, 
-                regulatory compliance, and process optimization using Lean Six Sigma methodologies.
-            </p>
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    <span class="font-bold text-blue-900">Certified Professional Coder (CPC)</span> and <span class="font-bold text-blue-900">Senior Quality Specialist at R1 RCM</span> with 12+ years of expertise in medical coding, auditing, and healthcare compliance.
+                </p>
+                
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Skilled in <span class="font-semibold">Emergency Department (ED) facility audits, general surgery compliance reviews, and outpatient/urgent care coding</span> with a consistent record of delivering 98%+ coding accuracy. Experienced in revenue cycle management optimization, denial management, and clinical documentation improvement (CDI) that drive measurable results, including reduced claim denials and improved audit quality.
+                </p>
+                
+                <p class="text-gray-600 leading-relaxed">
+                    Strong background in <span class="font-semibold">ICD-10, CPT, HCPCS, HIPAA compliance, CMS regulatory standards, and AAPC guidelines</span>, with proven success in leading high-volume audit operations, mentoring coding teams, and enhancing audit workflows.
+                </p>
+            </div>
             
-            <p class="text-gray-600">
-                Certified Professional Coder (CPC) with expertise in ICD-10, CPT coding, and quality audit processes.
-            </p>
+            <!-- Quick Info Cards -->
+            <div class="grid md:grid-cols-3 gap-6 mt-8">
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold text-blue-900">R1 RCM</div>
+                    <div class="text-sm text-gray-600">Senior Quality Specialist</div>
+                    <div class="text-xs text-gray-500">Nov 2015 - Present</div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold text-blue-900">Optum</div>
+                    <div class="text-sm text-gray-600">Medical Coder</div>
+                    <div class="text-xs text-gray-500">Mar 2014 - Nov 2015</div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold text-blue-900">Elico</div>
+                    <div class="text-sm text-gray-600">Medical Coder</div>
+                    <div class="text-xs text-gray-500">Jan 2013 - Feb 2014</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ======== SKILLS SECTION ======== -->
     <section id="skills" class="py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Core <span class="text-yellow-500">Skills</span></h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Core <span class="text-yellow-500">Competencies</span></h2>
             <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16"></div>
             
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Left Column -->
-                <div>
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2 font-semibold">
-                            <span>Medical Coding (ICD-10/CPT)</span>
-                            <span class="text-yellow-500">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
+                <!-- Left Column - Technical Skills -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Medical Coding & Auditing</h3>
                     
-                    <div class="mb-6">
+                    <div>
                         <div class="flex justify-between mb-2 font-semibold">
-                            <span>Revenue Cycle Management</span>
-                            <span class="text-yellow-500">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2 font-semibold">
-                            <span>Quality Assurance</span>
-                            <span class="text-yellow-500">97%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 97%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column -->
-                <div>
-                    <div class="mb-6">
-                        <div class="flex justify-between mb-2 font-semibold">
-                            <span>Healthcare Compliance</span>
+                            <span>Emergency Department (ED) Facility Auditing</span>
                             <span class="text-yellow-500">98%</span>
                         </div>
                         <div class="skill-bar">
@@ -328,25 +348,96 @@
                         </div>
                     </div>
                     
-                    <div class="mb-6">
+                    <div>
                         <div class="flex justify-between mb-2 font-semibold">
-                            <span>Team Training</span>
-                            <span class="text-yellow-500">92%</span>
+                            <span>General Surgery Compliance Auditing</span>
+                            <span class="text-yellow-500">97%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
+                            <div class="skill-progress" style="width: 97%"></div>
                         </div>
                     </div>
                     
-                    <div class="mb-6">
+                    <div>
                         <div class="flex justify-between mb-2 font-semibold">
-                            <span>Process Optimization</span>
+                            <span>ICD-10-CM / CPT-4 / HCPCS Coding</span>
+                            <span class="text-yellow-500">99%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 99%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Outpatient & E/M Coding Audits</span>
+                            <span class="text-yellow-500">96%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 96%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Healthcare Compliance -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Healthcare Compliance & RCM</h3>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Revenue Cycle Management</span>
+                            <span class="text-yellow-500">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>HIPAA / CMS / AAPC Compliance</span>
+                            <span class="text-yellow-500">98%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Clinical Documentation Improvement (CDI)</span>
                             <span class="text-yellow-500">94%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 94%"></div>
                         </div>
                     </div>
+                    
+                    <div>
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Denial Management & Resolution</span>
+                            <span class="text-yellow-500">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 93%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools & Systems -->
+            <div class="mt-12 p-6 bg-white rounded-xl shadow-md">
+                <h3 class="text-xl font-bold text-blue-900 mb-4">Technical Tools & Systems</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">3M Encoder</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">Epic</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">Meditech</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">Cerner</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">EMR/EHR Systems</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">MS Excel (Pivot, VLOOKUP)</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">Power BI</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">Audit Dashboards</span>
+                    <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-semibold">KPI Reporting</span>
                 </div>
             </div>
         </div>
@@ -354,91 +445,222 @@
 
     <!-- ======== EXPERIENCE SECTION ======== -->
     <section id="experience" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Professional <span class="text-yellow-500">Journey</span></h2>
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Professional <span class="text-yellow-500">Experience</span></h2>
             <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16"></div>
             
             <div class="space-y-8">
-                <!-- Item 1 -->
-                <div class="timeline-item">
+                <!-- R1 RCM -->
+                <div class="timeline-item bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-400">
                     <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                        <span class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold mb-3">2020 - Present</span>
-                        <h3 class="text-2xl font-bold mb-2">Senior Quality Specialist</h3>
-                        <p class="text-gray-600">Healthcare Quality & Coding Audit</p>
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-900">Senior Quality Specialist - Medical Coding & Auditing</h3>
+                            <p class="text-xl text-gray-600">R1 RCM, Noida</p>
+                        </div>
+                        <span class="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold">Nov 2015 - Present</span>
                     </div>
+                    
+                    <ul class="list-disc list-inside text-gray-600 space-y-3 mt-4">
+                        <li>Lead a team of <span class="font-bold">15+ coders and auditors</span>, driving Emergency Department facility medical auditing and general surgery compliance auditing while maintaining <span class="font-bold">100% SLA adherence</span></li>
+                        <li>Review and complete <span class="font-bold">800+ coding audits per month</span> across ED, outpatient, urgent care, and surgical coding, improving accuracy from 85% to <span class="font-bold">96% within 90 days</span></li>
+                        <li>Introduced root cause analysis (RCA) and clinical documentation improvement (CDI) strategies that cut billing discrepancies by <span class="font-bold">25%</span> and supported stronger revenue cycle management</li>
+                        <li>Built and managed audit dashboards and KPI reports, which increased productivity by <span class="font-bold">15%</span> and helped track coding accuracy improvements</li>
+                        <li>Designed and delivered training programs on ICD-10, CPT, HCPCS, and ED facility coding, enabling new coders to consistently achieve <span class="font-bold">95%+ accuracy</span></li>
+                        <li>Worked closely with clients to ensure HIPAA compliance and CMS regulatory standards were consistently met, improving audit quality and reducing compliance risks</li>
+                    </ul>
                 </div>
                 
-                <!-- Item 2 -->
-                <div class="timeline-item">
+                <!-- Optum -->
+                <div class="timeline-item bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-400">
                     <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                        <span class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold mb-3">2017 - 2020</span>
-                        <h3 class="text-2xl font-bold mb-2">Medical Coding Specialist</h3>
-                        <p class="text-gray-600">ICD-10 / CPT Coding</p>
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-900">Medical Coder</h3>
+                            <p class="text-xl text-gray-600">Optum Healthcare (UHG), Noida</p>
+                        </div>
+                        <span class="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold">Mar 2014 - Nov 2015</span>
                     </div>
+                    
+                    <ul class="list-disc list-inside text-gray-600 space-y-3 mt-4">
+                        <li>Delivered multi-specialty outpatient and E/M coding audits with <span class="font-bold">95%+ accuracy</span>, ensuring adherence to AAPC coding standards</li>
+                        <li>Boosted claim acceptance rates by <span class="font-bold">18%</span> by improving denial management and resolution processes, strengthening overall revenue cycle performance</li>
+                        <li>Produced detailed audit reports and maintained documentation that supported quality assurance in healthcare auditing and CMS compliance</li>
+                        <li>Improved EMR/EHR workflows, cutting turnaround time by <span class="font-bold">20%</span> while safeguarding compliance with regulatory standards</li>
+                    </ul>
                 </div>
                 
-                <!-- Item 3 -->
-                <div class="timeline-item">
+                <!-- Elico -->
+                <div class="timeline-item bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-400">
                     <div class="timeline-dot"></div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                        <span class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold mb-3">2015 - 2017</span>
-                        <h3 class="text-2xl font-bold mb-2">Certified Professional Coder</h3>
-                        <p class="text-gray-600">AAPC Certification</p>
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-900">Medical Coder</h3>
+                            <p class="text-xl text-gray-600">Elico Healthcare Services, Hyderabad</p>
+                        </div>
+                        <span class="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold">Jan 2013 - Feb 2014</span>
                     </div>
+                    
+                    <ul class="list-disc list-inside text-gray-600 space-y-3 mt-4">
+                        <li>Accurately coded ED facility medical records and general surgery cases using ICD-10, CPT, and HCPCS, ensuring compliance with CMS and HIPAA guidelines</li>
+                        <li>Completed a <span class="font-bold">3-month onshore training project in Alaska</span>, gaining hands-on experience with payer policies, revenue cycle management, and audit reporting</li>
+                        <li>Supported internal quality assurance audits that improved clinical documentation improvement (CDI) and maintained alignment with AAPC standards</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="mt-12 p-8 bg-gray-50 rounded-xl">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">Education</h3>
+                <div class="flex items-start gap-4">
+                    <div class="bg-yellow-400 w-12 h-12 rounded-full flex items-center justify-center text-black font-bold text-xl">PG</div>
+                    <div>
+                        <p class="font-bold text-lg">Post Graduate Diploma in Business Administration (Operations Management)</p>
+                        <p class="text-gray-600">Symbiosis Centre for Distance Learning - Pune | 2017 - 2019</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="mt-6 p-8 bg-gray-50 rounded-xl">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">Certifications</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="bg-white px-6 py-3 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                        <span class="font-bold text-blue-900">CPC</span>
+                        <p class="text-sm text-gray-600">Certified Professional Coder (AAPC) - Active</p>
+                    </div>
+                    <div class="bg-white px-6 py-3 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                        <span class="font-bold text-blue-900">HIPAA</span>
+                        <p class="text-sm text-gray-600">HIPAA Compliance Training</p>
+                    </div>
+                    <div class="bg-white px-6 py-3 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                        <span class="font-bold text-blue-900">ICD-10</span>
+                        <p class="text-sm text-gray-600">Advanced ICD-10 & CPT Coding Workshop</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== ACHIEVEMENTS SECTION ======== -->
+    <section id="achievements" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Key <span class="text-yellow-500">Achievements</span></h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16"></div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="achievement-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">100% SLA Compliance</h3>
+                    <p class="text-gray-600">Consistently maintained 100% SLA compliance while overseeing large-scale Emergency Department facility audits and general surgery compliance reviews.</p>
+                </div>
+                
+                <div class="achievement-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">📉</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">20% Denial Reduction</h3>
+                    <p class="text-gray-600">Reduced claim denials by 20% through proactive clinical documentation improvement (CDI) and root cause analysis (RCA) that strengthened revenue cycle management.</p>
+                </div>
+                
+                <div class="achievement-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">12% Accuracy Improvement</h3>
+                    <p class="text-gray-600">Designed and led training programs on ICD-10, CPT, and HCPCS coding standards, helping coding teams raise accuracy scores by 12%.</p>
+                </div>
+                
+                <div class="achievement-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">⭐</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Client Recognition</h3>
+                    <p class="text-gray-600">Recognized by leadership and clients for improving audit quality, ensuring HIPAA compliance, and meeting CMS regulatory standards across multiple projects.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ======== CONTACT SECTION ======== -->
-    <section id="contact" class="py-24 bg-gray-900 text-white">
+    <section id="contact" class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div class="max-w-4xl mx-auto text-center px-6">
             <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="text-yellow-400">Touch</span></h2>
             <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
             
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <!-- Email -->
-                <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition">
-                    <div class="text-4xl mb-3">📧</div>
-                    <h3 class="font-bold mb-2">Email</h3>
-                    <p class="text-gray-300 break-all">vipul.arya.in@gmail.com</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <!-- Contact Info -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl text-left">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-xl">📧</span>
+                            <div>
+                                <p class="text-sm text-gray-400">Email</p>
+                                <p class="font-semibold">vipul.arya.in@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-xl">📞</span>
+                            <div>
+                                <p class="text-sm text-gray-400">Phone</p>
+                                <p class="font-semibold">+91 9717244415</p>
+                                <p class="font-semibold">+91 8800208777</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-xl">📍</span>
+                            <div>
+                                <p class="text-sm text-gray-400">Location</p>
+                                <p class="font-semibold">Mumbai, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 text-xl">💼</span>
+                            <div>
+                                <p class="text-sm text-gray-400">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/vipularya" target="_blank" class="font-semibold hover:text-yellow-400">
+                                    linkedin.com/in/vipularya
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- LinkedIn -->
-                <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition">
-                    <div class="text-4xl mb-3">💼</div>
-                    <h3 class="font-bold mb-2">LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/vipul-arya-31525423b/" target="_blank" class="text-yellow-400 hover:text-yellow-300">
-                        Connect with me
-                    </a>
-                </div>
-                
-                <!-- Resume -->
-                <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition">
-                    <div class="text-4xl mb-3">📄</div>
-                    <h3 class="font-bold mb-2">Resume</h3>
-                    <a href="resume.pdf" download="Vipul_Arya_Resume.pdf" class="text-yellow-400 hover:text-yellow-300">
-                        Download PDF
-                    </a>
+                <!-- Quick Links -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl text-left">
+                    <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+                    
+                    <div class="space-y-4">
+                        <a href="resume.pdf" download class="flex items-center gap-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition">
+                            <span class="text-yellow-400 text-2xl">📄</span>
+                            <div>
+                                <p class="font-semibold">Download Resume</p>
+                                <p class="text-sm text-gray-400">PDF Version</p>
+                            </div>
+                        </a>
+                        
+                        <a href="mailto:vipul.arya.in@gmail.com" class="flex items-center gap-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition">
+                            <span class="text-yellow-400 text-2xl">✉️</span>
+                            <div>
+                                <p class="font-semibold">Send Email</p>
+                                <p class="text-sm text-gray-400">vipul.arya.in@gmail.com</p>
+                            </div>
+                        </a>
+                        
+                        <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                            <span class="text-yellow-400 text-2xl">⏰</span>
+                            <div>
+                                <p class="font-semibold">Response Time</p>
+                                <p class="text-sm text-gray-400">Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Contact Button -->
-            <a href="mailto:vipul.arya.in@gmail.com" class="inline-block bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition transform hover:scale-105">
-                Send Message
-            </a>
+            <!-- Copyright -->
+            <p class="text-gray-400 text-sm mt-8">© 2026 Vipul Arya, CPC. All rights reserved.</p>
         </div>
     </section>
-
-    <!-- ======== FOOTER ======== -->
-    <footer class="bg-black text-gray-400 py-8">
-        <div class="max-w-7xl mx-auto text-center px-6">
-            <p class="mb-2">© 2026 Vipul Arya. All rights reserved.</p>
-            <p class="text-sm">Senior Quality Specialist | Healthcare Expert</p>
-        </div>
-    </footer>
 
     <!-- ======== JAVASCRIPT ======== -->
     <script>
@@ -446,16 +668,18 @@
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            menuBtn.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
-        });
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                menuBtn.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+            });
+        }
         
         // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
-                menuBtn.textContent = '☰';
+                if (menuBtn) menuBtn.textContent = '☰';
             });
         });
         
@@ -474,20 +698,34 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.classList.add('bg-white/95', 'backdrop-blur-sm');
+                header.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-lg');
             } else {
-                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+                header.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-lg');
             }
         });
         
         // Check if image loaded
-        const profileImg = document.getElementById('profileImage');
-        if (profileImg.complete && profileImg.naturalHeight === 0) {
-            profileImg.style.display = 'none';
-            document.getElementById('imageFallback').style.display = 'flex';
-        }
-        
-        console.log('Website loaded successfully!');
+        window.addEventListener('load', function() {
+            const profileImg = document.getElementById('profileImage');
+            if (profileImg) {
+                if (profileImg.complete && profileImg.naturalHeight === 0) {
+                    profileImg.style.display = 'none';
+                    document.getElementById('imageFallback').style.display = 'flex';
+                }
+            }
+            
+            // Animate skill bars when in view
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.width = entry.target.style.width;
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            skillBars.forEach(bar => observer.observe(bar));
+        });
     </script>
 </body>
 </html>
