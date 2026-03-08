@@ -1,172 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vipul Arya | Senior Quality Specialist</title>
-
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-
+        
         .hero-gradient {
             background: linear-gradient(135deg, #002D62, #001735);
         }
-
-        .fade {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
+        
+        /* Header styles */
+        header {
+            transition: all 0.3s ease;
         }
-
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0);
+        
+        /* Mobile menu */
+        @media (max-width: 768px) {
+            #mobile-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 40;
+            }
+            
+            #mobile-menu.open {
+                transform: translateX(0);
+            }
+            
+            #mobile-menu a {
+                display: block;
+                padding: 12px;
+                color: #1f2937;
+                font-weight: 600;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            #mobile-menu a:last-child {
+                border-bottom: none;
+            }
+            
+            #mobile-menu a:hover {
+                background: #f3f4f6;
+            }
+        }
+        
+        /* Fade animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Skill bars */
+        .skill-bar {
+            height: 10px;
+            background: #e5e7eb;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #fbbf24;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: #fbbf24;
+            border-radius: 50%;
         }
     </style>
 </head>
-
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- HERO SECTION -->
-    <section class="hero-gradient min-h-screen flex items-center text-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6 py-20">
-            
-            <!-- LEFT CONTENT -->
-            <div class="fade space-y-6">
-                <h3 class="text-yellow-400 uppercase tracking-widest font-semibold">
-                    Healthcare Quality Expert
-                </h3>
-                
-                <h1 class="text-5xl md:text-6xl font-extrabold">
-                                    Vipul Arya
-                </h1>
-                
-                <p class="text-xl text-gray-200">
-                    Senior Quality Specialist | CPC | CAIMC | LSSGB
-                </p>
-                
-                <p class="text-gray-300 text-lg">
-                    10+ years experience in Medical Coding, Revenue Cycle Management and Healthcare Quality.
-                </p>
-                
-                <!-- BUTTONS - FILES IN ROOT FOLDER -->
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="resume.pdf" 
-                       download="Vipul_Arya_Resume.pdf"
-                       class="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold hover:bg-yellow-300 transition transform hover:scale-105 inline-block">
-                        📄 Download Resume
-                    </a>
-
-                    <a href="#contact"
-                       class="border-2 border-yellow-400 px-8 py-3 rounded-lg font-bold hover:bg-yellow-400 hover:text-black transition transform hover:scale-105 inline-block">
-                        Contact Me
-                    </a>
+    <!-- ======== HEADER / NAVBAR ======== -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div>
+                    <h1 class="text-2xl font-bold text-blue-900">Vipul Arya</h1>
                 </div>
-            </div>
-
-            <!-- RIGHT CONTENT - PROFILE IMAGE (IN ROOT FOLDER) -->
-            <div class="flex justify-center fade">
-                <div class="relative">
-                    <div class="w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl bg-gradient-to-br from-blue-100 to-white">
-                        <img src="vipul-photo.png"
-                             alt="Vipul Arya"
-                             class="w-full h-full object-cover"
-                             onerror="this.onerror=null; this.src='https://via.placeholder.com/350x350/002D62/ffffff?text=VA';">
-                    </div>
-                    
-                    <!-- Experience Badge -->
-                    <div class="absolute -bottom-4 -right-4 bg-yellow-400 w-20 h-20 rounded-full flex items-center justify-center text-black font-bold text-lg shadow-xl">
-                        10+ Years
-                    </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="font-semibold text-gray-700 hover:text-yellow-500 transition">About</a>
+                    <a href="#skills" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Skills</a>
+                    <a href="#experience" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Experience</a>
+                    <a href="#contact" class="font-semibold text-gray-700 hover:text-yellow-500 transition">Contact</a>
+                </nav>
+                
+                <!-- Right Buttons -->
+                <div class="flex items-center space-x-4">
+                    <a href="resume.pdf" download class="hidden md:inline-block bg-yellow-400 text-black px-5 py-2 rounded-lg font-bold hover:bg-yellow-300 transition">
+                        Resume
+                    </a>
+                    <button id="menuBtn" class="md:hidden text-3xl text-gray-700 hover:text-yellow-500">
+                        ☰
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed top-20 left-0 w-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#about" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">About</a>
+                <a href="#skills" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Skills</a>
+                <a href="#experience" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Experience</a>
+                <a href="#contact" class="text-gray-700 font-semibold hover:text-yellow-500 py-2">Contact</a>
+                <a href="resume.pdf" download class="bg-yellow-400 text-black px-5 py-3 rounded-lg font-bold text-center">Download Resume</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- CONTACT SECTION (SIMPLIFIED) -->
-    <section id="contact" class="py-20 bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <div class="fade">
-                <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+    <!-- ======== HERO SECTION ======== -->
+    <section class="hero-gradient min-h-screen flex items-center text-white pt-24">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 
-                <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="p-6 bg-white/10 rounded-xl">
-                        <div class="text-3xl mb-2">📧</div>
-                        <p class="text-gray-300">vipul.arya.in@gmail.com</p>
+                <!-- Left Content -->
+                <div>
+                    <div class="fade-in">
+                        <span class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+                            Healthcare Quality Expert
+                        </span>
                     </div>
                     
-                    <div class="p-6 bg-white/10 rounded-xl">
-                        <div class="text-3xl mb-2">💼</div>
-                        <a href="https://www.linkedin.com/in/vipul-arya-31525423b/" 
-                           target="_blank"
-                           class="text-yellow-400 hover:text-yellow-300">
-                            LinkedIn Profile
-                        </a>
-                    </div>
+                    <h1 class="fade-in delay-1 text-5xl md:text-6xl font-extrabold mb-4">
+                        Vipul <span class="text-yellow-400">Arya</span>
+                    </h1>
                     
-                    <div class="p-6 bg-white/10 rounded-xl">
-                        <div class="text-3xl mb-2">📄</div>
+                    <p class="fade-in delay-2 text-xl text-gray-200 mb-4">
+                        Senior Quality Specialist | CPC | CAIMC | LSSGB
+                    </p>
+                    
+                    <p class="fade-in delay-2 text-gray-300 text-lg mb-8 leading-relaxed">
+                        10+ years experience in Medical Coding, Revenue Cycle Management and Healthcare Quality.
+                    </p>
+                    
+                    <!-- Buttons -->
+                    <div class="fade-in delay-3 flex flex-wrap gap-4">
                         <a href="resume.pdf" 
                            download="Vipul_Arya_Resume.pdf"
-                           class="text-yellow-400 hover:text-yellow-300">
-                            Download Resume
+                           class="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg flex items-center gap-2">
+                            <span>📄</span> Download Resume
                         </a>
+                        
+                        <a href="#contact" 
+                           class="border-2 border-yellow-400 px-8 py-4 rounded-lg font-bold hover:bg-yellow-400 hover:text-black transition transform hover:scale-105">
+                            Contact Me
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="fade-in delay-3 grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/20">
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-400">10+</div>
+                            <div class="text-sm text-gray-300">Years</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-400">5000+</div>
+                            <div class="text-sm text-gray-300">Cases</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-yellow-400">100%</div>
+                            <div class="text-sm text-gray-300">Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Profile Image with Fallback -->
+                <div class="flex justify-center items-center">
+                    <div class="relative">
+                        <!-- Image Container -->
+                        <div class="w-[320px] h-[320px] md:w-[380px] md:h-[380px] rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl bg-gradient-to-br from-blue-500 to-blue-700">
+                            <img src="vipul-photo.png" 
+                                 alt="Vipul Arya"
+                                 class="w-full h-full object-cover"
+                                 id="profileImage"
+                                 onerror="this.style.display='none'; document.getElementById('imageFallback').style.display='flex';">
+                            
+                            <!-- Fallback VA Circle -->
+                            <div id="imageFallback" class="hidden w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-800">
+                                <span class="text-white text-7xl font-bold">VA</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience Badge -->
+                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 w-20 h-20 rounded-full flex flex-col items-center justify-center text-black font-bold shadow-xl">
+                            <span class="text-2xl">10+</span>
+                            <span class="text-xs">Years</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black text-gray-400 text-center py-6">
-        © 2026 Vipul Arya | Senior Quality Specialist
+    <!-- ======== ABOUT SECTION ======== -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="text-yellow-500">Me</span></h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
+            
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                Senior Quality Specialist with over a decade of experience in healthcare quality assurance, 
+                medical coding, and revenue cycle management. I specialize in ensuring documentation accuracy, 
+                regulatory compliance, and process optimization using Lean Six Sigma methodologies.
+            </p>
+            
+            <p class="text-gray-600">
+                Certified Professional Coder (CPC) with expertise in ICD-10, CPT coding, and quality audit processes.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======== SKILLS SECTION ======== -->
+    <section id="skills" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Core <span class="text-yellow-500">Skills</span></h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16"></div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Medical Coding (ICD-10/CPT)</span>
+                            <span class="text-yellow-500">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Revenue Cycle Management</span>
+                            <span class="text-yellow-500">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Quality Assurance</span>
+                            <span class="text-yellow-500">97%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 97%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Healthcare Compliance</span>
+                            <span class="text-yellow-500">98%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Team Training</span>
+                            <span class="text-yellow-500">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2 font-semibold">
+                            <span>Process Optimization</span>
+                            <span class="text-yellow-500">94%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 94%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== EXPERIENCE SECTION ======== -->
+    <section id="experience" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Professional <span class="text-yellow-500">Journey</span></h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto mb-16"></div>
+            
+            <div class="space-y-8">
+                <!-- Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <span class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold mb-3">2020 - Present</span>
+                        <h3 class="text-2xl font-bold mb-2">Senior Quality Specialist</h3>
+                        <p class="text-gray-600">Healthcare Quality & Coding Audit</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <span class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold mb-3">2017 - 2020</span>
+                        <h3 class="text-2xl font-bold mb-2">Medical Coding Specialist</h3>
+                        <p class="text-gray-600">ICD-10 / CPT Coding</p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <span class="inline-block bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold mb-3">2015 - 2017</span>
+                        <h3 class="text-2xl font-bold mb-2">Certified Professional Coder</h3>
+                        <p class="text-gray-600">AAPC Certification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== CONTACT SECTION ======== -->
+    <section id="contact" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In <span class="text-yellow-400">Touch</span></h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Email -->
+                <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition">
+                    <div class="text-4xl mb-3">📧</div>
+                    <h3 class="font-bold mb-2">Email</h3>
+                    <p class="text-gray-300 break-all">vipul.arya.in@gmail.com</p>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition">
+                    <div class="text-4xl mb-3">💼</div>
+                    <h3 class="font-bold mb-2">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/vipul-arya-31525423b/" target="_blank" class="text-yellow-400 hover:text-yellow-300">
+                        Connect with me
+                    </a>
+                </div>
+                
+                <!-- Resume -->
+                <div class="p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition">
+                    <div class="text-4xl mb-3">📄</div>
+                    <h3 class="font-bold mb-2">Resume</h3>
+                    <a href="resume.pdf" download="Vipul_Arya_Resume.pdf" class="text-yellow-400 hover:text-yellow-300">
+                        Download PDF
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Button -->
+            <a href="mailto:vipul.arya.in@gmail.com" class="inline-block bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold hover:bg-yellow-300 transition transform hover:scale-105">
+                Send Message
+            </a>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="bg-black text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto text-center px-6">
+            <p class="mb-2">© 2026 Vipul Arya. All rights reserved.</p>
+            <p class="text-sm">Senior Quality Specialist | Healthcare Expert</p>
+        </div>
     </footer>
 
+    <!-- ======== JAVASCRIPT ======== -->
     <script>
-        // Fade In Animation
-        const faders = document.querySelectorAll(".fade");
-        const appearOptions = { threshold: 0.2 };
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            menuBtn.textContent = mobileMenu.classList.contains('open') ? '✕' : '☰';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuBtn.textContent = '☰';
             });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
         });
-
-        // Check if files exist
-        window.addEventListener('load', function() {
-            // Check image
-            fetch('vipul-photo.png', { method: 'HEAD' })
-                .then(res => {
-                    if (res.ok) console.log('✅ Image found in root folder');
-                    else console.log('❌ Image not found');
-                })
-                .catch(() => console.log('❌ Image error'));
-            
-            // Check resume
-            fetch('resume.pdf', { method: 'HEAD' })
-                .then(res => {
-                    if (res.ok) console.log('✅ Resume found in root folder');
-                    else console.log('❌ Resume not found');
-                })
-                .catch(() => console.log('❌ Resume error'));
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                header.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+        
+        // Check if image loaded
+        const profileImg = document.getElementById('profileImage');
+        if (profileImg.complete && profileImg.naturalHeight === 0) {
+            profileImg.style.display = 'none';
+            document.getElementById('imageFallback').style.display = 'flex';
+        }
+        
+        console.log('Website loaded successfully!');
     </script>
 </body>
 </html>
